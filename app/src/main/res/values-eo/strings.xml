@@ -20,4 +20,5 @@
     <string name="sender_and_message">Sendinto kaj mesaĝo</string>
     <string name="sender_only">Nur sendinto</string>
     <string name="messages">Mesaĝoj</string>
-    </resources>
+    <string name="app_launcher_name">Mesaĝoj</string>
+</resources>
