@@ -1,0 +1,2 @@
+* S'han solucionat problemes amb el reenviament de missatges (https://github.com/FossifyOrg/Messages/issues/288)
+* S'han afegit més traduccions
