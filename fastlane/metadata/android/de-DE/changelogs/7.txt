@@ -1,0 +1,2 @@
+* Probleme mit dem Weiterleiten von Nachrichten behoben (https://github.com/FossifyOrg/Messages/issues/288)
+* Weitere Übersetzungen hinzugefügt
