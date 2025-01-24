@@ -116,4 +116,7 @@
     <string name="enable_custom_notifications">Известия по избор</string>
     <string name="update_message">Промяна на съобщението</string>
     <string name="message_details">Подробности за съобщението</string>
+    <string name="keywords">Ключови думи</string>
+    <string name="export_blocked_keywords">Изнасяне на ключовите думи</string>
+    <string name="import_blocked_keywords">Внасяне на ключови думи</string>
 </resources>
