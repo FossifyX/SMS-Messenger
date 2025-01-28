@@ -522,6 +522,7 @@ class MainActivity : SimpleActivity() {
             .setLongLabel(newEvent)
             .setIcon(Icon.createWithBitmap(bmp))
             .setIntent(intent)
+            .setRank(0)
             .build()
     }
 
