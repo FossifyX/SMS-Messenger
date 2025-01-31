@@ -1,0 +1,2 @@
+* Parandasime sõnumite edastamise vead (https://github.com/FossifyOrg/Messages/issues/288)
+* Lisasime veel tõlkeid
