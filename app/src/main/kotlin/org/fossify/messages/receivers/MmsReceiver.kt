@@ -85,8 +85,10 @@ class MmsReceiver : MmsReceivedReceiver() {
                 threadId = mms.threadId,
                 bitmap = glideBitmap
             )
-            val conversation = context.getConversations(mms.threadId).firstOrNull() ?: return@post
+
             ensureBackgroundThread {
+                val conversation = context.getConversations(mms.threadId).firstOrNull()
+                    ?: return@ensureBackgroundThread
                 context.insertOrUpdateConversation(conversation)
                 context.updateUnreadCountBadge(context.conversationsDB.getUnreadConversations())
                 refreshMessages()
