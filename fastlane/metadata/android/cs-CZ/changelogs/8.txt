@@ -1,0 +1,4 @@
+* Opraven problém s intenty třetích stran
+* Opravena chyba vyskakovací zprávy při obdržení MMS zprávy
+* Opraven problém rozložení zprava doleva ve vláknech
+* Přidány další překlady
