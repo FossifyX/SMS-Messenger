@@ -1,0 +1,4 @@
+* Corregit un problema amb propòsits de tercers
+* Corregit un error de notificació en rebre missatges MMS
+* Corregit un problema de disposició RTL en els fils
+* Afegides més traduccions
