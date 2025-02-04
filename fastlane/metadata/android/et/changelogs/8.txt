@@ -1,0 +1,4 @@
+* Parandasime kolmandate osapoolte rakendustega tekkinud vea
+* Parandasime teavitusvea MMS-sõnumi saabumisel
+* Parandasime küljendusvea jutulõngades, kui kasutusel on paremalt vasakule kuvatavate kirjatüübid
+* Lisasime veel tõlkeid

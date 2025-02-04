@@ -1,0 +1,4 @@
+* Problem mit Drittanbieter-Intents behoben
+* Toast-Fehler beim Empfang von MMS-Nachrichten behoben
+* Layout-Problem in Threads bei linksläufiger Schreibrichtung behoben
+* Weitere Übersetzungen hinzugefügt
