@@ -71,7 +71,8 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:parentActivityName=".activities.MainActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
 
         <activity
             android:name=".activities.NewConversationActivity"

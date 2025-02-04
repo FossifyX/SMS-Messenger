@@ -37,7 +37,6 @@ import org.fossify.commons.extensions.normalizeString
 import org.fossify.commons.extensions.notificationManager
 import org.fossify.commons.extensions.queryCursor
 import org.fossify.commons.extensions.showErrorToast
-import org.fossify.commons.extensions.toInt
 import org.fossify.commons.extensions.toast
 import org.fossify.commons.extensions.trimToComparableNumber
 import org.fossify.commons.helpers.DAY_SECONDS
@@ -56,6 +55,7 @@ import org.fossify.messages.helpers.Config
 import org.fossify.messages.helpers.FILE_SIZE_NONE
 import org.fossify.messages.helpers.MESSAGES_LIMIT
 import org.fossify.messages.helpers.NotificationHelper
+import org.fossify.messages.helpers.ShortcutHelper
 import org.fossify.messages.helpers.generateRandomId
 import org.fossify.messages.interfaces.AttachmentsDao
 import org.fossify.messages.interfaces.ConversationsDao
@@ -94,6 +94,8 @@ val Context.notificationHelper get() = NotificationHelper(this)
 val Context.messagingUtils get() = MessagingUtils(this)
 
 val Context.smsSender get() = SmsSender.getInstance(applicationContext as Application)
+
+val Context.shortcutHelper get() = ShortcutHelper(this)
 
 fun Context.getMessages(
     threadId: Long,
@@ -822,6 +824,9 @@ fun Context.deleteConversation(threadId: Long) {
         config.removeCustomNotificationsByThreadId(threadId)
         notificationManager.deleteNotificationChannel(threadId.toString())
     }
+    if(shortcutHelper.getShortcut(threadId) != null) {
+        shortcutHelper.removeShortcutForThread(threadId)
+    }
 }
 
 fun Context.checkAndDeleteOldRecycleBinMessages(callback: (() -> Unit)? = null) {
@@ -1210,6 +1215,9 @@ fun Context.renameConversation(conversation: Conversation, newTitle: String): Co
     val updatedConv = conversation.copy(title = newTitle, usesCustomTitle = true)
     try {
         conversationsDB.insertOrUpdate(updatedConv)
+        ensureBackgroundThread {
+            shortcutHelper.createOrUpdateShortcut(updatedConv)
+        }
     } catch (e: Exception) {
         e.printStackTrace()
     }
